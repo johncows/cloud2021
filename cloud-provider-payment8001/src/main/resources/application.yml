@@ -4,7 +4,6 @@ server:
 spring:
   application:
     name: cloud-payment-service
-
   datasource:
     # 当前数据源操作类型
     type: com.alibaba.druid.pool.DruidDataSource
@@ -19,3 +18,10 @@ mybatis:
   type-aliases-package: com.eiletxie.springcloud.entities
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+    register-with-eureka: true
+    fetch-registry: true

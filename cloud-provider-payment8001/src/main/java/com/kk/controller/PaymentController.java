@@ -1,6 +1,5 @@
 package com.kk.controller;
 
-import com.kk.dao.PaymentDao;
 import com.kk.entity.CommonResult;
 import com.kk.entity.Payment;
 import com.kk.service.PaymentService;
@@ -30,7 +29,7 @@ public class PaymentController {
     public CommonResult get( @PathVariable Long id){
         Payment payment = paymentService.getPaymentDaoById(id);
         if (payment == null) {
-            return new CommonResult(400,"没有对应的记录");
+            return new CommonResult(400, "没有对应的记录1");
         }
         return new CommonResult(payment);
     }
