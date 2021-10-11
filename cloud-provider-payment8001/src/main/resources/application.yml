@@ -27,3 +27,7 @@ eureka:
     fetch-registry: true
   instance:
     instance-id: cloud-payment-service-8001
+#    Eureka 客户端向服务器发送心跳的时间间隔
+    lease-expiration-duration-in-seconds: 1
+#    Eureka服务端在收到最后一次心跳包后等待时间上限,单位为秒,超时就被剔除
+    lease-renewal-interval-in-seconds: 2
