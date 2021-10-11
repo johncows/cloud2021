@@ -15,7 +15,7 @@ public class OrderController {
     @Autowired
     private RestTemplate restTemplate;
 
-    private final String BASEURL = "http://localhost:8001/";
+    private final String BASEURL = "http://CLOUD-PAYMENT-SERVICE/";
 
 
     @PostMapping("/payments")

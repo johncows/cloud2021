@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8002
 
 spring:
   application:
@@ -26,4 +26,4 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
   instance:
-    instance-id: cloud-payment-service-8001
+    instance-id: cloud-payment-service-8002
