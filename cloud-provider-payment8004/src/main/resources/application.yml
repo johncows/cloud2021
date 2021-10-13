@@ -1,9 +1,12 @@
 server:
-  port: 8001
+  port: 8004
 
 spring:
   application:
     name: cloud-payment-service
+  cloud:
+    zookeeper:
+      connect-string: 106.15.121.132
   datasource:
     # 当前数据源操作类型
     type: com.alibaba.druid.pool.DruidDataSource
@@ -18,16 +21,3 @@ mybatis:
   type-aliases-package: com.eiletxie.springcloud.entities
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka7001.com:7001/eureka/
-    register-with-eureka: true
-    fetch-registry: true
-  instance:
-    instance-id: cloud-payment-service-8001
-#    Eureka 客户端向服务器发送心跳的时间间隔
-    lease-expiration-duration-in-seconds: 1
-#    Eureka服务端在收到最后一次心跳包后等待时间上限,单位为秒,超时就被剔除
-    lease-renewal-interval-in-seconds: 2

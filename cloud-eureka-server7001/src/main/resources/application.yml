@@ -6,10 +6,13 @@ server:
   port: 7001
 
 eureka:
+  # 关闭了自我保护机制,一旦服务停止就移除注册信息
+  server:
+    enable-self-preservation: false
   instance:
     hostname: localhost
   client:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://eureka7002.com:7002/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/
