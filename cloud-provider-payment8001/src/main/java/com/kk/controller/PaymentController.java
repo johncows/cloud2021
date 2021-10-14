@@ -5,6 +5,7 @@ import com.kk.entity.Payment;
 import com.kk.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -13,6 +14,9 @@ public class PaymentController {
 
     @Autowired
     private PaymentService paymentService;
+
+    @Value("${server.port}")
+    private String port;
 
     @PostMapping("/payments")
     public CommonResult add( @RequestBody Payment payment){
@@ -32,6 +36,11 @@ public class PaymentController {
             return new CommonResult(400, "没有对应的记录1");
         }
         return new CommonResult(payment);
+    }
+
+    @GetMapping("/server")
+    public String get(){
+        return "调用的服务端口 "+port;
     }
 
 }

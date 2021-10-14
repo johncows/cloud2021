@@ -5,7 +5,6 @@ import com.kk.entity.CommonResult;
 import com.kk.entity.Payment;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,8 +15,7 @@ public class OrderController {
     @Autowired
     private RestTemplate restTemplate;
 
-    private final String BASEURL = "http://CLOUD-PAYMENT-SERVICE/";
-
+    private final String BASEURL = "http://cloud-payment-service-8005/";
 
     @PostMapping("/payments")
     public CommonResult add(@RequestBody Payment payment) {
@@ -29,21 +27,9 @@ public class OrderController {
         return restTemplate.getForEntity(BASEURL + "payments/" + id, CommonResult.class).getBody();
     }
 
-    @GetMapping("/server1")
-    public String getObject(){
-        return restTemplate.getForObject(BASEURL + "server", String.class);
+    @GetMapping("/payments/zk")
+    public String get() {
+        return restTemplate.getForEntity(BASEURL + "payments/zk",String.class).getBody();
     }
-
-    @GetMapping("/server2")
-    public String getResponseEntity(){
-        ResponseEntity<String> forEntity = restTemplate.getForEntity(BASEURL + "server", String.class);
-        if (forEntity.getStatusCode().is2xxSuccessful()) {
-            return forEntity.getBody();
-        }else {
-            return "服务调用失败";
-        }
-    }
-
-
 
 }

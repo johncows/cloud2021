@@ -1,5 +1,6 @@
 package com.kk.controller;
 
+import cn.hutool.core.lang.UUID;
 import com.kk.entity.CommonResult;
 import com.kk.entity.Payment;
 import com.kk.service.PaymentService;
@@ -17,6 +18,7 @@ public class PaymentController {
 
     @Value("${server.port}")
     private String port;
+
 
     @PostMapping("/payments")
     public CommonResult add( @RequestBody Payment payment){
@@ -38,8 +40,8 @@ public class PaymentController {
         return new CommonResult(payment);
     }
 
-    @GetMapping("/server")
-    public String get(){
-        return "调用的服务端口 "+port;
+    @GetMapping("/payments/zk")
+    public String getZookeeper( ){
+        return "spring cloud with zookeeper: "+port +"\t" + UUID.randomUUID();
     }
 }
