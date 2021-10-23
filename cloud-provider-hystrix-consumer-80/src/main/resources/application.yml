@@ -14,3 +14,9 @@ eureka:
     instance-id: cloud-consumer-service-80
 
 debug: true
+ribbon:
+  ReadTimeout: 6000
+  ConnectingTimeOut: 6000
+
+
+

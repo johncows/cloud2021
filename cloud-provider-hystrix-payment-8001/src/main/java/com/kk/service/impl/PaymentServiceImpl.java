@@ -16,11 +16,11 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public String timeOutRequest() {
-        try {
-            Thread.sleep(5_000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(5_000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         return "fail request,error Thread "+ Thread.currentThread().getName();
     }
 }
