@@ -1,13 +1,14 @@
 package com.kk.controller;
 
 
-
 import com.kk.service.PaymentService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
@@ -41,15 +42,12 @@ public class PaymentsController {
             @HystrixProperty(name="circuitBreaker.sleepWindowInMilliseconds",value = "10000"),// 10秒内一个周期
             @HystrixProperty(name="circuitBreaker.errorThresholdPercentage",value = "60"),//失败60跳闸
     })
-    public String getOrder(@PathVariable Integer  id){
-        if(id%2==1){
-            try {
-                Thread.sleep(5_000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+    public String getOrder(@PathVariable Integer  id) {
+        System.out.println("进入目标方法体---");
+        if (id % 2 == 1) {
+            throw new RuntimeException("订单错误");
         }
-        return "正常服务 单号"+id;
+        return "正常服务 单号" + id;
     }
 
 }

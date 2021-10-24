@@ -12,5 +12,3 @@ eureka:
     fetch-registry: true
   instance:
     instance-id: cloud-provider-service-8081
-
-debug: true
