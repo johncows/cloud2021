@@ -25,5 +25,4 @@ public class GatewaySpringBootApplication {
                 r.path("/guonei").uri("http://news.baidu.com/guonei")).build();
         return routeLocator;
     }
-
 }
