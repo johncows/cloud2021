@@ -1,0 +1,14 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud-message-provider
+  rabbitmq:
+    addresses: 106.15.121.132
+    username: admin
+    password: admin
+
+
+
+  spring.rabbitmq.
