@@ -4,11 +4,12 @@ server:
 spring:
   application:
     name: cloud-message-provider
+
+
   rabbitmq:
-    addresses: 106.15.121.132
+    addresses: 106.15.121.132:5672
     username: admin
     password: admin
 
 
 
-  spring.rabbitmq.
