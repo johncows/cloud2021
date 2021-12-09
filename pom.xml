@@ -25,6 +25,8 @@
         <module>cloud-message-provider</module>
         <module>cloud-provider-payment9001</module>
         <module>nacos-provider-payment9001</module>
+        <module>nacos-consumer-payment9002</module>
+        <module>nacos-config</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -14,6 +14,9 @@ public class NacosController {
     @Value("${spring.application.name}")
     private String appName;
 
+//    @Value("${name}")
+//    private String name;
+
     @GetMapping(value = "/echo/{string}")
     public String echo(@PathVariable String string) {
         return "Hello Nacos Discovery " + string;

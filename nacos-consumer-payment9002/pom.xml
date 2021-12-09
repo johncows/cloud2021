@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.kk</groupId>
-    <artifactId>nacos-provider-payment9001</artifactId>
+    <artifactId>nacos-consumer-payment9002</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencyManagement>
@@ -37,11 +37,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
 
         <dependency>

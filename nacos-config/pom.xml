@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.kk</groupId>
-    <artifactId>nacos-provider-payment9001</artifactId>
+    <artifactId>nacos-config</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencyManagement>
@@ -47,11 +47,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
     </dependencies>
 </project>
